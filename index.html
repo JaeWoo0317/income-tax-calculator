@@ -46,7 +46,6 @@ input[type="number"]{flex:1;padding:12px 16px;border:1.5px solid var(--border);b
 .nav-toggle{display:none;background:none;border:1.5px solid var(--border);border-radius:8px;padding:6px 10px;font-size:20px;cursor:pointer;color:var(--text-secondary);line-height:1}
 @media(max-width:640px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surface);border-bottom:1.5px solid var(--border);padding:12px 20px;flex-direction:column;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:99}.nav-links.open{display:flex}.nav{position:relative}}
 </style>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5453815259196400" crossorigin="anonymous"></script>
 </head><body>
 <nav class="nav"><div class="nav-inner"><a href="https://jwaytools.com/" class="nav-logo">J<span>WAY</span></a><button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button><div class="nav-links"><a href="https://jwaytools.com/char-counter/">글자수</a><a href="https://jwaytools.com/date-calculator/">날짜</a><a href="https://jwaytools.com/percent-calculator/">퍼센트</a><a href="https://jwaytools.com/salary-calculator/">연봉</a><a href="https://jwaytools.com/bmi-calculator/">BMI</a><a href="https://jwaytools.com/exchange-rate/">환율</a><a href="https://jwaytools.com/unit-converter/">단위</a><a href="https://jwaytools.com/timer/">타이머</a><a href="https://jwaytools.com/qr-generator/">QR</a><a href="https://jwaytools.com/color-converter/">색상</a><a href="https://jwaytools.com/random-picker/">랜덤</a><a href="https://jwaytools.com/loan-calculator/">대출</a><a href="https://jwaytools.com/age-calculator/">만나이</a><a href="https://jwaytools.com/savings-calculator/">예적금</a><a href="https://jwaytools.com/income-tax-calculator/">소득세</a></div></div></nav>
 <header class="header"><h1>소득세 <em>계산기</em></h1><p>과세표준을 입력하면 2025년 누진세율로 소득세와 지방소득세를 정확하게 계산합니다.</p></header>
@@ -112,6 +111,21 @@ input[type="number"]{flex:1;padding:12px 16px;border:1.5px solid var(--border);b
 
 <h2>연말정산과 종합소득세의 차이</h2>
 <p>근로자는 매월 급여에서 "간이세액표" 기준으로 소득세가 미리 공제되며, 다음해 2월 연말정산을 통해 실제 세액이 확정됩니다. 공제 항목이 많으면 환급, 적으면 추가 납부가 발생합니다. 반면 사업소득자·프리랜서 등은 5월에 "종합소득세 신고"를 통해 세금을 직접 납부합니다. 이 계산기는 두 경우 모두 활용할 수 있습니다.</p>
+
+<h2>계산 기준과 공식 출처</h2>
+<p>이 계산기는 2023년 이후 적용되는 종합소득세 과세표준 구간과 세율, 누진공제액을 기준으로 산출세액을 계산합니다. 과세표준 구간은 1,400만원 이하 6%부터 10억원 초과 45%까지 구성되며, 지방소득세는 산출된 소득세의 10%로 계산합니다.</p>
+<p>세율 확인에는 <a href="https://www.nts.go.kr/" target="_blank" rel="noopener">국세청</a>의 종합소득세 안내, <a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a>의 소득세법 자료를 참고할 수 있습니다. 실제 신고세액은 소득 종류, 필요경비, 소득공제, 세액공제, 기납부세액에 따라 달라지므로 이 계산기는 과세표준을 알고 있을 때 산출세액을 빠르게 확인하는 용도입니다.</p>
+
+<h2>실제 계산 예시 3가지</h2>
+<h3>과세표준 1,400만원</h3>
+<p>1,400만원까지는 6% 세율이 적용됩니다. 산출세액은 84만원이고 지방소득세 8만 4천원을 더하면 총 부담은 92만 4천원입니다. 이 구간은 누진공제가 없습니다.</p>
+<h3>과세표준 5,000만원</h3>
+<p>5,000만원은 15% 구간입니다. 누진공제 방식으로 계산하면 5,000만원 × 15% - 126만원 = 624만원입니다. 지방소득세 62만 4천원을 더하면 총 686만 4천원입니다.</p>
+<h3>과세표준 1억원</h3>
+<p>1억원은 35% 구간에 속합니다. 1억원 × 35% - 1,544만원 = 1,956만원이 산출세액이며, 지방소득세를 포함하면 약 2,151만 6천원입니다. 단, 실제 납부액은 세액공제와 이미 납부한 원천징수세액에 따라 달라집니다.</p>
+
+<h2>사용 전 주의사항</h2>
+<p>과세표준은 연봉이나 매출과 같은 금액이 아닙니다. 총수입에서 필요경비, 근로소득공제, 인적공제, 연금보험료 공제, 특별소득공제 등을 차감한 뒤 남는 금액입니다. 본인의 과세표준을 모른다면 원천징수영수증, 종합소득세 신고서, 홈택스 신고 내역을 먼저 확인하는 것이 정확합니다.</p>
 
 <h2>이 도구의 주요 기능</h2>
 <p>과세표준을 입력하면 2025년 기준 누진세율로 소득세와 지방소득세를 자동 계산합니다. 실효세율과 한계세율이 함께 표시되어 세금 부담률과 추가 소득 시 예상 세금을 파악할 수 있습니다. 하단 누진세율표에는 본인이 속한 구간이 강조 표시되어 직관적으로 본인의 세율 구간을 확인할 수 있습니다. 빠른 선택 버튼으로 흔한 과세표준 구간(1,400만원, 5,000만원, 8,800만원 등)을 한 번에 입력할 수 있습니다. 모든 계산은 브라우저에서 이루어지며 입력한 금액 정보는 어디에도 저장되지 않습니다.</p>
