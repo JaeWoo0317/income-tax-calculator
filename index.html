@@ -2,10 +2,10 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>소득세 계산기 — 종합소득세·근로소득세 한번에 | JWAY</title>
-<meta name="description" content="소득세 계산기 무료 온라인 도구. 과세표준을 입력하면 2025년 누진세율로 소득세와 지방소득세를 정확하게 계산합니다. 연말정산 환급액 예상에도 활용.">
+<title>과세표준 소득세 계산기 — 2026 기본세율·누진공제 | JWAY</title>
+<meta name="description" content="과세표준에 2026년 적용 기본세율과 누진공제를 적용해 소득세·지방소득세 산출세액을 계산합니다. 최종 신고세액이 아닌 비교용 계산입니다.">
 <meta name="keywords" content="소득세 계산기, 종합소득세, 근로소득세, 과세표준, 누진세율, 연말정산, 지방소득세">
-<meta property="og:title" content="소득세 계산기 — 2025 누진세율 적용 | JWAY">
+<meta property="og:title" content="소득세 계산기 — 2026 누진세율 적용 | JWAY">
 <meta property="og:description" content="과세표준 입력 → 소득세·지방소득세 즉시 계산. 누진세율 6~45%.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://jwaytools.com/income-tax-calculator/og-image.png">
@@ -45,10 +45,10 @@ input[type="number"]{flex:1;padding:12px 16px;border:1.5px solid var(--border);b
 @media(max-width:480px){.header{padding:32px 16px 0}.container{padding:0 12px 16px}.calc-card,.guide-card{padding:20px 16px}.nav-links a{font-size:12px}}
 .nav-toggle{display:none;background:none;border:1.5px solid var(--border);border-radius:8px;padding:6px 10px;font-size:20px;cursor:pointer;color:var(--text-secondary);line-height:1}
 @media(max-width:640px){.nav-toggle{display:block}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:var(--surface);border-bottom:1.5px solid var(--border);padding:12px 20px;flex-direction:column;gap:10px;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:99}.nav-links.open{display:flex}.nav{position:relative}}
-</style>
-</head><body>
-<nav class="nav"><div class="nav-inner"><a href="https://jwaytools.com/" class="nav-logo">J<span>WAY</span></a><button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button><div class="nav-links"><a href="https://jwaytools.com/salary-calculator/">연봉</a><a href="https://jwaytools.com/income-tax-calculator/">소득세</a><a href="https://jwaytools.com/loan-calculator/">대출</a><a href="https://jwaytools.com/savings-calculator/">예적금</a><a href="https://jwaytools.com/bmi-calculator/">BMI</a><a href="https://jwaytools.com/exchange-rate/">환율</a><a href="https://jwaytools.com/blog/">가이드</a></div></div></nav>
-<header class="header"><h1>소득세 <em>계산기</em></h1><p>과세표준을 입력하면 2025년 누진세율로 소득세와 지방소득세를 정확하게 계산합니다.</p></header>
+.trust-bar{max-width:760px;margin:14px auto 0;padding:10px 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text-secondary);font-size:12px;text-align:center}.trust-bar a{color:var(--accent);font-weight:600}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"소득세 산출세액 계산기","url":"https://jwaytools.com/income-tax-calculator/","applicationCategory":"FinanceApplication","operatingSystem":"Any","isAccessibleForFree":true,"author":{"@type":"Person","name":"JWAY 편집부","url":"https://jwaytools.com/about.html"},"dateModified":"2026-07-01"}</script></head><body>
+<nav class="nav"><div class="nav-inner"><a href="https://jwaytools.com/" class="nav-logo">J<span>WAY</span></a><button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button><div class="nav-links"><a href="https://jwaytools.com/salary-calculator/">연봉</a><a href="https://jwaytools.com/income-tax-calculator/">소득세</a><a href="https://jwaytools.com/loan-calculator/">대출</a><a href="https://jwaytools.com/savings-calculator/">예적금</a><a href="https://jwaytools.com/blog/">가이드</a><a href="https://jwaytools.com/editorial-policy.html">편집 원칙</a></div></div></nav>
+<header class="header"><h1>소득세 <em>계산기</em></h1><p>과세표준을 입력하면 기본세율과 누진공제를 적용한 소득세·지방소득세 산출세액을 계산합니다.</p></header><div class="trust-bar">최종 검토 2026-07-01 · 국세청 기본세율·누진공제 기준 · <a href="https://jwaytools.com/editorial-policy.html">계산 원칙</a></div>
 <main class="container">
 <div class="calc-card">
 <div class="field-group"><label class="field-label">과세표준</label><div class="input-row"><input type="number" id="taxable" value="50000000" step="1000000"><span class="input-unit">원</span></div><div class="quick-row"><button class="quick-btn" onclick="setT(14000000)">1,400만원</button><button class="quick-btn" onclick="setT(30000000)">3,000만원</button><button class="quick-btn" onclick="setT(50000000)">5,000만원</button><button class="quick-btn" onclick="setT(88000000)">8,800만원</button><button class="quick-btn" onclick="setT(150000000)">1.5억원</button></div></div>
@@ -63,7 +63,7 @@ input[type="number"]{flex:1;padding:12px 16px;border:1.5px solid var(--border);b
 <div class="detail-card"><div class="detail-label">한계세율</div><div class="detail-value" id="margRate">-</div></div>
 </div>
 <div class="bracket-section">
-<div class="bracket-title">2025년 소득세 누진세율 구간</div>
+<div class="bracket-title">2026년 소득세 누진세율 구간</div>
 <div class="bracket-row" data-bracket="0">1,400만원 이하 · 6%</div>
 <div class="bracket-row" data-bracket="1">1,400 ~ 5,000만원 · 15%</div>
 <div class="bracket-row" data-bracket="2">5,000 ~ 8,800만원 · 24%</div>
@@ -76,7 +76,7 @@ input[type="number"]{flex:1;padding:12px 16px;border:1.5px solid var(--border);b
 </div>
 
 <div class="guide-section"><div class="guide-card">
-<h2>2025년 소득세 누진세율</h2>
+<h2>2026년 소득세 누진세율</h2>
 <p>한국의 소득세는 과세표준 구간별로 세율이 다른 "누진세율" 체계를 사용합니다. 소득이 많을수록 높은 세율이 적용되며, 현재 최저 6%부터 최고 45%까지 8개 구간으로 나뉘어 있습니다. 중요한 점은 전체 과세표준에 한 가지 세율이 적용되는 것이 아니라, 각 구간별로 해당 세율이 적용된다는 것입니다.</p>
 <p>예를 들어 과세표준 5천만원인 경우, 1,400만원까지는 6%(84만원), 1,400만원 초과 ~ 5,000만원은 15%(540만원), 총 624만원의 소득세가 부과됩니다. 여기에 지방소득세 10%가 추가되어 최종 686만원입니다.</p>
 
@@ -108,7 +108,7 @@ input[type="number"]{flex:1;padding:12px 16px;border:1.5px solid var(--border);b
 
 <h2>계산 기준과 공식 출처</h2>
 <p>이 계산기는 2023년 이후 적용되는 종합소득세 과세표준 구간과 세율, 누진공제액을 기준으로 산출세액을 계산합니다. 과세표준 구간은 1,400만원 이하 6%부터 10억원 초과 45%까지 구성되며, 지방소득세는 산출된 소득세의 10%로 계산합니다.</p>
-<p>세율 확인에는 <a href="https://www.nts.go.kr/" target="_blank" rel="noopener">국세청</a>의 종합소득세 안내, <a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a>의 소득세법 자료를 참고할 수 있습니다. 실제 신고세액은 소득 종류, 필요경비, 소득공제, 세액공제, 기납부세액에 따라 달라지므로 이 계산기는 과세표준을 알고 있을 때 산출세액을 빠르게 확인하는 용도입니다.</p>
+<p>세율 확인에는 <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7873&mi=6594" target="_blank" rel="noopener">국세청 과세표준·세율 안내</a>의 종합소득세 안내, <a href="https://www.law.go.kr/" target="_blank" rel="noopener">국가법령정보센터</a>의 소득세법 자료를 참고할 수 있습니다. 실제 신고세액은 소득 종류, 필요경비, 소득공제, 세액공제, 기납부세액에 따라 달라지므로 이 계산기는 과세표준을 알고 있을 때 산출세액을 빠르게 확인하는 용도입니다.</p>
 
 <h2>실제 계산 예시 3가지</h2>
 <h3>과세표준 1,400만원</h3>
@@ -122,7 +122,7 @@ input[type="number"]{flex:1;padding:12px 16px;border:1.5px solid var(--border);b
 <p>과세표준은 연봉이나 매출과 같은 금액이 아닙니다. 총수입에서 필요경비, 근로소득공제, 인적공제, 연금보험료 공제, 특별소득공제 등을 차감한 뒤 남는 금액입니다. 본인의 과세표준을 모른다면 원천징수영수증, 종합소득세 신고서, 홈택스 신고 내역을 먼저 확인하는 것이 정확합니다.</p>
 
 <h2>이 도구의 주요 기능</h2>
-<p>과세표준을 입력하면 2025년 기준 누진세율로 소득세와 지방소득세를 자동 계산합니다. 실효세율과 한계세율이 함께 표시되어 세금 부담률과 추가 소득 시 예상 세금을 파악할 수 있습니다. 하단 누진세율표에는 본인이 속한 구간이 강조 표시되어 직관적으로 본인의 세율 구간을 확인할 수 있습니다. 빠른 선택 버튼으로 흔한 과세표준 구간(1,400만원, 5,000만원, 8,800만원 등)을 한 번에 입력할 수 있습니다. 모든 계산은 브라우저에서 이루어지며 입력한 금액 정보는 어디에도 저장되지 않습니다.</p>
+<p>과세표준을 입력하면 현재 적용되는 기본세율과 누진공제로 소득세와 지방소득세 산출세액을 자동 계산합니다. 실효세율과 한계세율이 함께 표시되어 세금 부담률과 추가 소득 시 예상 세금을 파악할 수 있습니다. 하단 누진세율표에는 본인이 속한 구간이 강조 표시되어 직관적으로 본인의 세율 구간을 확인할 수 있습니다. 빠른 선택 버튼으로 흔한 과세표준 구간(1,400만원, 5,000만원, 8,800만원 등)을 한 번에 입력할 수 있습니다. 모든 계산은 브라우저에서 이루어지며 입력한 금액 정보는 어디에도 저장되지 않습니다.</p>
 <h2>이런 상황에서 활용하세요</h2>
 <div class="scenario-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0 4px">
 <div class="scenario" style="background:var(--surface-alt);border:1px solid var(--border);border-radius:10px;padding:16px"><h3>시나리오 1: 연말정산 환급 예상</h3><p><strong>상황:</strong> 공제 항목을 챙겼는데 실제 세금이 얼마나 줄어드는지 감이 안 올 수 있습니다.</p><p><strong>활용법:</strong> 과세표준과 공제 후 예상 세액을 계산합니다.</p><p><strong>결과:</strong> 환급 기대치를 과하게 잡지 않고 준비할 수 있습니다.</p></div>
@@ -151,7 +151,7 @@ input[type="number"]{flex:1;padding:12px 16px;border:1.5px solid var(--border);b
 
 </main>
 
-<footer class="footer"><div class="footer-inner"><div class="footer-col"><a href="https://jwaytools.com/" class="footer-logo">J<span>WAY</span></a><p>매일 필요한 실용 도구를 무료로 제공합니다. 모든 계산은 브라우저에서 처리되며 개인정보를 수집하지 않습니다.</p></div><div class="footer-col"><a href="https://jwaytools.com/salary-calculator/">연봉 실수령액</a><a href="https://jwaytools.com/income-tax-calculator/">소득세 계산기</a><a href="https://jwaytools.com/loan-calculator/">대출 이자 계산기</a><a href="https://jwaytools.com/savings-calculator/">예적금 계산기</a><a href="https://jwaytools.com/bmi-calculator/">BMI 계산기</a><a href="https://jwaytools.com/exchange-rate/">환율 계산기</a><a href="https://jwaytools.com/blog/">계산 가이드</a><a href="https://jwaytools.com/about.html">소개</a><a href="https://jwaytools.com/contact.html">문의</a><a href="https://jwaytools.com/terms.html">이용약관</a><a href="https://jwaytools.com/privacy-policy.html">개인정보처리방침</a></div></div><div class="footer-bottom">© 2025 JWAY. All rights reserved.</div></footer>
+<footer class="footer"><div class="footer-inner"><div class="footer-col"><a href="https://jwaytools.com/" class="footer-logo">J<span>WAY</span></a><p>매일 필요한 실용 도구를 무료로 제공합니다. 모든 계산은 브라우저에서 처리되며 개인정보를 수집하지 않습니다.</p></div><div class="footer-col"><a href="https://jwaytools.com/salary-calculator/">연봉 실수령액</a><a href="https://jwaytools.com/income-tax-calculator/">소득세 산출세액</a><a href="https://jwaytools.com/loan-calculator/">대출 상환 비교</a><a href="https://jwaytools.com/savings-calculator/">예적금 세후 이자</a><a href="https://jwaytools.com/blog/">계산 가이드</a><a href="https://jwaytools.com/editorial-policy.html">편집·계산 원칙</a><a href="https://jwaytools.com/about.html">소개</a><a href="https://jwaytools.com/contact.html">문의·오류 제보</a><a href="https://jwaytools.com/privacy-policy.html">개인정보처리방침</a></div></div><div class="footer-bottom">© 2026 JWAY. All rights reserved.</div></footer>
 
 <script>
 const BRACKETS=[[14000000,0.06,0],[50000000,0.15,1260000],[88000000,0.24,5760000],[150000000,0.35,15440000],[300000000,0.38,19940000],[500000000,0.40,25940000],[1000000000,0.42,35940000],[Infinity,0.45,65940000]];
